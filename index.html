@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up - Simon Says</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+
+    // Function to set cookies
+    function setCookie(name, value, days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" +encodeURIComponent(value) + ";" + expires + ";path=/";
+    }
+
+    function signup() {
+      var name = document.gamesignup.name.value;
+      var username = document.gamesignup.username.value;
+      var password = document.gamesignup.password.value;
+      var confirm = document.gamesignup.confirm.value;
+
+      // Name check
+      if (name === "") {
+        alert("Please enter your full name.");
+        return false;
+      }
+
+      // Username validation (must contain '@' like in login page)
+      if (username === "") {
+        alert("Please enter a username.");
+        return false;
+      } else if (!username.includes("@")) {
+        alert("Username must contain '@' symbol.");
+        return false;
+      }
+
+      // Password validation
+      if (
+        password.length < 6 ||
+        !/^[A-Za-z]/.test(password) ||
+        !/[!@#$%^&*(),.?":{}|<>]/.test(password) ||
+        !/[0-9]/.test(password)
+      ) {
+        alert("Password must be at least 6 characters long,\nstart with an alphabet,\ncontain a special symbol (!@#...),\nand include a number.");
+        return false;
+      }
+
+      // Confirm password check
+      if (password !== confirm) {
+        alert("Passwords do not match!");
+        return false;
+      }
+
+       // Save to cookies for 7 days
+      setCookie("username", username, 7);
+      setCookie("password", password, 7);
+
+      //  check if cookies are saved
+      console.log("All cookies after signup:", document.cookie);
+
+      setTimeout(function() {
+        window.location.href = "loginpage.html";
+      }, 1000);
+      return false; // prevent actual form submission
+  }
+
+  </script>
+
+  <h1>Create Your Simon Says Account</h1>
+  <form name="gamesignup" method="post" action="/signup" onsubmit="return signup()">
+    <input type="text" name="name" placeholder="Full Name" ><br>
+    <input type="text" name="username" placeholder="Username (must contain @)"><br>
+    <input type="password" name="password" placeholder="Password" ><br>
+    <input type="password" name="confirm" placeholder="Confirm Password" ><br>
+    <button type="submit" name="button" value="Sign Up">Sign Up</button><br>
+    <a href="loginpage.html">Already have an account?<br>Login</a>
+  </form>
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+body {
+    background-color:#1C1C1C;
+    color: #ecf0f1;
+    font-family: Arial, sans-serif; /* Using Arial as a strong, common font */
+    margin: 0;
+    min-height: 100vh;
+
+    /* Center the container using Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#container{
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 
+                0 0 0 5px rgba(255, 255, 255, 0.1);
+    background-color: #303030;
+
+    box-shadow: 
+        0 0 15px rgba(231, 76, 60, 1.0), /* Red glow */
+        0 0 30px rgba(60, 71, 231, 0.8), /* Blue glow */
+        0 0 45px rgba(60, 231, 151, 0.6), /* Green glow */
+        0 0 60px rgba(223, 223, 43, 0.4); /* Yellow glow */
+    transition: box-shadow 0.5s ease;
+}
+
+#title h1{
+    font-size: 6em;
+    font-weight: 900;
+    letter-spacing: 5px; /* Adjust line height to bring text closer together */
+    margin-bottom: 20px;
+    color:white;
+    text-shadow:  0 0 10px rgba(231, 76, 60, 0.8), /* Red glow */
+                0 0 20px rgba(60, 71, 231, 0.5),
+                0 0 30px rgba(60, 231, 151, 0.3),
+                0 0 40px rgba(223, 223, 43, 0.2);
+}
+
+#maintag {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #bdc3c7; /* Slightly muted color */
+}
+
+#subtag {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    color: #95a5a6;
+    line-height: 1.6;
+}
+
+#play {
+    display: inline-block;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    letter-spacing: 5px; /* Adds space inside the :: play :: text */
+    margin-top: 30px;
+    
+    /* Hover effect */
+    transition: color 0.4s ease;
+}
+
+#play:hover {
+    text-shadow: 
+        0 0 8px rgba(231, 76, 60, 0.9), /* Red */
+        0 0 15px rgba(60, 71, 231, 0.7), /* Blue */
+        0 0 25px rgba(60, 231, 151, 0.5), /* Green */
+        0 0 35px rgba(223, 223, 43, 0.3); /* Yellow */
+    color: white;
+}

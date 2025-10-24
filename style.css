@@ -1,0 +1,112 @@
+/* Color Palette: 
+   Primary Background: #121212 (Near Black)
+   Secondary/Form Background: #1E1E1E (Dark Grey)
+   Accent Color: #00BCD4 (Teal/Cyan)
+   Text: #E0E0E0 (Off-White)
+*/
+
+/* --- Global Body Styling --- */
+body {
+    background-color: #121212; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #E0E0E0; 
+    text-align: center; 
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* --- Heading Styling (H1) - Now 3D --- */
+h1 {
+    color: #00BCD4; 
+    font-weight: 700;
+    font-size: 2.5em; /* Slightly larger for 3D effect */
+    margin-bottom: 30px;
+    letter-spacing: 2px; /* Increased letter spacing */
+    text-transform: uppercase; /* Uppercase adds to impact */
+
+    /* --- 3D Text Effect --- */
+    text-shadow: 
+        1px 1px 0 #0097A7,   /* Shadow layer 1 (closer, darker teal) */
+        2px 2px 0 #00838F,   /* Shadow layer 2 */
+        3px 3px 0 #006064,   /* Shadow layer 3 */
+        4px 4px 0 #004D40,   /* Shadow layer 4 (deepest, darkest teal/greenish hue) */
+        0 0 15px rgba(0, 188, 212, 0.7); /* Teal glow on top */
+}
+
+/* --- Form Container Styling --- */
+form { 
+    background-color: #1E1E1E; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 40px; 
+    border: 1px solid #333; 
+    border-radius: 12px; 
+    /* --- Enhanced Box Shadow with depth --- */
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.8), /* Stronger, deeper main shadow */
+        0 0 0 5px rgba(0, 188, 212, 0.2); /* Thicker teal glow border */
+}
+
+/* --- Input Fields Styling --- */
+input { 
+    margin: 10px 0; 
+    padding: 12px; 
+    width: 250px; 
+    background-color: #2D2D2D; 
+    color: #E0E0E0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #00BCD4; 
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.8); 
+    outline: none;
+}
+
+/* --- Button Styling --- */
+button { 
+    padding: 12px 30px; 
+    margin-top: 20px;
+    background-color: #00BCD4; 
+    color: #121212; 
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+}
+
+button:hover { 
+    background-color: #00A3B5; 
+    box-shadow: 0 6px 15px rgba(0, 188, 212, 0.4), 0 0 20px rgba(0, 188, 212, 0.3); /* Added more glow on hover */
+    transform: translateY(-2px); 
+}
+
+/* --- Link Styling --- */
+a {
+    display: block; 
+    margin-top: 20px;
+    color: #80DEEA; 
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FFFFFF; 
+}
+
+/* --- Optional: Welcome User Message (for Login page) --- */
+#welcomeUser {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #80DEEA; 
+}

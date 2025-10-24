@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Simon Says</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="showWelcome(); showUserFromCookie()";></body>
+  <script>
+    // Function to display an alert when the page loads
+    function showWelcome() {
+      alert("Welcome! Please log in to play Simon Says.");
+    }
+
+    // Function to get saved cookies
+    function getCookie(name) {
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var cookiesArray = decodedCookie.split(';');
+      name = name + "=";
+      for (var i = 0; i < cookiesArray.length; i++) {
+        var c = cookiesArray[i].trim();
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // Show cookie data after page load
+    function showUserFromCookie() {
+      var user = getCookie("username");
+      if (user) {
+        document.getElementById("welcomeUser").innerHTML = "Welcome back, " + user + "!";
+      }
+    }
+
+      function login(event) {
+      event.preventDefault(); // Prevents default form submission
+
+      var username = document.gamelogin.username.value;
+      var password = document.gamelogin.password.value;
+
+      if (username === "" || password === "") {
+        alert("Please fill out all fields before submitting.");
+        return false; // stop form submission
+      }
+
+      var savedUsername = getCookie("username");
+      var savedPassword = getCookie("password");
+
+      console.log("Entered:", username, password);
+      console.log("Saved:", savedUsername, savedPassword);
+
+    if (username === savedUsername && password === savedPassword) {
+      alert("Login successful! Redirecting to game...");
+      window.location.href = "playsimon.html";
+    } else {
+      alert("Invalid username or password");
+    }
+    return false;
+  
+    }
+  </script>
+
+  <h1>Login to Simon Says Game</h1>
+
+  <form name="gamelogin" onsubmit="login(event)">
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="password" name="password" placeholder="Password" ><br>
+    <button type="submit">Login</button>
+    <br><br>
+    <a href="index.html">Don’t have an account? <br>Sign up</a>
+  </form>
+  </form>
+</body>
+</html>

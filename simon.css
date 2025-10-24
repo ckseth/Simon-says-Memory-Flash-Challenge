@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top:20px;
+    background-color: black; 
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+#game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* FIX: Set the overall container to a fixed size square */
+#simon-board {
+    display: flex; /* Use flex to manage the two rows */
+    flex-direction: column;
+    position: relative;
+    gap: 10px; /* Space between the two rows */
+
+    /* Removed circular styling */
+    padding: 20px;
+    background-color: #333; 
+    box-shadow: 0 0 30px grey;
+    border-radius: 10px;
+}
+
+#center-label {
+    /* Center it absolutely within the board */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers it perfectly */
+    
+    /* Styling for the "SIMON" text */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    width: 150px; /* Size of the inner circle */
+    height: 150px;
+    color: white; /* Text color */
+    border-radius: 50%;
+    letter-spacing: 5px; /* Spacing between letters */
+    /* Content Alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 15px #111; /* Gives it depth */
+    z-index: 10; /* Ensures it sits above the buttons */
+}
+
+/* NEW: Style the row containers to put buttons side-by-side */
+.line-one, .line-two {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.btn {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px; /* Square with rounded corners */
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.1s, box-shadow 0.1s;
+    
+    /* Make text visible again for the square style */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: white;
+}
+
+/* Removed circular border-radius properties */
+.red { background-color: #9F0F17; }
+.green { background-color: #00A74A; }
+.blue { background-color: #094A8F; }
+.yellow { background-color: #CCBB00; }
+.flash{
+    background-color: white;
+}
+
